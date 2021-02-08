@@ -1,0 +1,165 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<h2 id="top-title">API Doc</h2>
+
+<div id="doc">
+    <h5>Overview</h5>
+    <p>
+        Marvel Characters API is a CRUD RESTful web API for managing data related to Marvel comic
+        characters.
+    </p>
+
+    <h5>Standards and Conventions</h5>
+
+    <p>
+        All string inputs should be lowercase except for the origin description, which may include uppercase 
+        characters.  Nicknames should be surrounded by single quotes.  Earth universes should be 
+        formatted like earth-616.
+    </p>
+
+    <h5>Endpoints</h5>
+    <p>There is one unencrypted production endpoint with the value http://127.0.0.1:5000/characters.</p>
+    
+    <h5>Authorization</h5>
+    <p>
+        In your profile you will find your API key, which you will need to provide when making HTTP 
+        requests.
+    </p>
+    <p>
+        To authorize access to the API, add a custom header named x-access-token and your API key as 
+        its value.
+    </p>
+
+    <h5>Requests</h5>
+    <p>
+        You may CREATE CHARACTER, GET SINGLE CHARACTER, GET ALL CHARACTERS, UPDATE CHARACTER, or 
+        DELETE CHARACTER.
+    </p>
+
+    <h5>Variables</h5>
+    <p>
+        Data for each character is contained in the following variables, one of which, current_alias,
+        is not nullable.
+    </p>
+    <ul>
+        <li>comics_appeared_in -- the number of comics a character has appeared in</li>
+        <li>current_alias -- the current alias of a character, e.g., captain marvel</li>
+        <li>origin -- the background and origin story of the character</li>
+        <li>power -- one of the main powers of the character</li>
+        <li>real_name -- the real name of the character, e.g. peter parker</li>
+        <li>universe -- the primary fictional universe in which the character exists</li>
+    </ul>
+
+    <h5>Input data format</h5>
+
+    <p>
+        The body of CREATE CHARACTER and UPDATE CHARACTER should be in JSON data format like the
+        following example:
+    </p>
+    <pre><code>
+        {
+            "comics_appeared_in": 819,
+            "current_alias": "captain marvel",
+            "origin": "Human/Kree Hybrid further altered...",
+            "power": "energy manipulation",
+            "real_name": "carol susan jane danvers ",
+            "universe": "earth-616"
+        }
+    </code></pre>
+    
+    <h5>Output data format</h5>
+    
+    <p style="margin-bottom:3vh;">All outputs are in JSON data format.</p>
+
+    <h6 id="request">CREATE CHARACTER</h6>
+    <p>HTTP request: POST http://127.0.0.1:5000/characters</p>
+    <p>sample output:</p>
+    <pre><code>
+        {
+            "comics_appeared_in": 819,
+            "current_alias": "captain marvel",
+            "id": 11,
+            "origin": "Human/Kree Hybrid further altered...",
+            "power": "energy manipulation",
+            "real_name": "carol susan jane danvers ",
+            "universe": "earth-616"
+        }
+    </code></pre>
+
+    <h6 id="request">GET SINGLE CHARACTER</h6>
+    <p>HTTP request: GET http://127.0.0.1:5000/characters/{id}</p>
+    <p>URL parameter {id} denotes which character to get, where {id} is an integer</p>
+    <p>sample output:</p>
+    <pre><code>
+        {
+            "comics_appeared_in": 10563,
+            "current_alias": "captain america",
+            "id": 2,
+            "origin": "Human enhanced to the peak of human perfection...",
+            "power": "super-soldier",
+            "real_name": "steven 'steve' rogers",
+            "universe": "earth-616"
+        }
+    </code></pre>
+    
+    <h6 id="request">GET ALL CHARACTERS</h6>
+    <p>HTTP request: GET http://127.0.0.1:5000/characters</p>
+    <p>sample output:</p>
+    <pre><code>
+        [
+            {
+                "comics_appeared_in": 4048,
+                "current_alias": "scarlet witch",
+                "id": 9,
+                "origin": "Human genetically altered by the High...",
+                "power": "chaos magic",
+                "real_name": "wanda maximoff",
+                "universe": "earth-616"
+            },
+            {
+                "comics_appeared_in": 819,
+                "current_alias": "captain marvel",
+                "id": 10,
+                "origin": "Human/Kree Hybrid further altered on...",
+                "power": "energy manipulation",
+                "real_name": "carol susan jane danvers ",
+                "universe": "earth-616"
+            }
+        ]
+    </code></pre>
+
+    <h6 id="request">UPDATE CHARACTER</h6>
+    <p>HTTP request: POST http://127.0.0.1:5000/characters/{id}</p>
+    <p>URL parameter {id} denotes which character to update, where {id} is an integer</p>
+    <p>sample output:</p>
+    <pre><code>
+        {
+            "comics_appeared_in": 15435,
+            "current_alias": "spider-man",
+            "id": 8,
+            "origin": "Radioactive Spider bite during a science...",
+            "power": "spider physiology",
+            "real_name": "peter benjamin parker",
+            "universe": "earth-616"
+        }
+    </code></pre>
+
+    <h6 id="request">DELETE CHARACTER</h6>
+    <p>HTTP request: DEL http://127.0.0.1:5000/characters/{id}</p>
+    <p>URL parameter {id} denotes which character to delete, where {id} is an integer</p>
+    <p>sample output:</p>
+    <pre><code>
+        {
+            "comics_appeared_in": 10563,
+            "current_alias": "captain america",
+            "id": 5,
+            "origin": "Human enhanced to the peak of human perfection...",
+            "power": "super-soldier",
+            "real_name": "steven 'steve' rogers",
+            "universe": "earth-616"
+        }
+    </code></pre>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<h1>Marvel Character API</h1>
+
+<div id="main-content">
+    <h5>{ A fast, reliable, and secure web-native API for tracking detailed Marvel character data }</h5>
+    <h5>{ All data is standardized and checked by real people }</h5>
+</div>
+
+<div id="home-buttons-div">
+    <a class="btn btn-primary" href="{{ url_for('signup') }}">Get a Free API Key</a>
+    <!-- <a class="btn btn-primary" href=" url_for('support') ">Contact Our Team</a> -->
+</div>
+
+
+{% endblock content %}

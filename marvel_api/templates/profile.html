@@ -1,0 +1,28 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<header class="hero-section" id="welcome">
+    <h3 class="header-text">Welcome to Marvel Character API, {{ current_user.first_name.title() }}!</h3>
+</header>
+
+<div class="container" id="profile_details">
+    <h4>Here are your profile details</h4>
+    <ul class="list-group" id="details">
+        <li class="list-group-item"><b>First Name</b>: {{ current_user.first_name.title() }}</li>
+        <li class="list-group-item"><b>Last Name</b>: {{ current_user.last_name.title() }}</li>
+        <li class="list-group-item"><b>Email</b>: {{ current_user.email }}</li>
+        <li class="list-group-item"><b>Token</b>: {{ current_user.token }}</li>
+        {% if jwt %}
+        <li class="list-group-item" ><b>API Access Key</b>: <p>{{ jwt }}</p></li> 
+        {% else %}
+        <li class="list-group-item">API Access Key: <p>None</p></li> 
+        {% endif %}
+    </ul>
+</div>
+
+<div>
+    {% print(my_characters) %}
+</div>
+
+{% endblock content %}

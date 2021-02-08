@@ -1,0 +1,50 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<!-- Flask Flashed Messages to User -->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'auth-failed'%}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                        <a class="btn" id="alert_btn" href = "/signin">&times;</a>
+                    </div>
+                {% elif cat == 'invalid-email' %}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                        <a class="btn" id="alert_btn" href = "/signin">&times;</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<h2>Sign In To Your Account</h2>
+
+<main>
+    <aside>
+        {% include 'shared/forms.html' %}
+    </aside>
+
+    <!-- todo: add button for google sign up -->
+    <div class="google-choose">
+        <h6> OR </h6>
+    </div>
+
+    <!-- button for google sign up -->
+    <a href="{{ url_for('google_auth') }}">
+        <button class="btn" id="google">
+            Sign In With Google
+        </button>
+    </a>
+
+    <aside id="side-color">
+        <!-- todo: add button for google sign up -->
+    </aside>
+</main>
+
+{% endblock content %}

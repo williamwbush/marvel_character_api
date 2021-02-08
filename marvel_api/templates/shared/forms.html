@@ -1,0 +1,26 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+
+        {% if signup %}
+            <fieldset id="first-name-field">
+                    {{ form.first_name(class = "form-control", placeholder = "First Name")}}
+            </fieldset>
+
+            <fieldset id="last-name-field">
+                {{ form.last_name(class = "form-control", placeholder = "Last Name")}}
+            </fieldset>
+        {% endif %}
+
+        <fieldset id="email-field">
+            {{ form.email(class = "form-control", placeholder = "Email")}}
+        </fieldset>
+
+        <fieldset id="pass-field">
+            {{ form.password(class = "form-control", placeholder = "Password")}}
+        </fieldset>
+
+        {{ form.submit_button(class = "btn btn-primary btn-block") }}
+    </div>
+</form>

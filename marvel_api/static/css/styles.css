@@ -1,0 +1,229 @@
+body {
+    background-image: url("../../static/images/marvel_battle.png");
+    background-color: #cccccc;
+    color: white;
+   }
+
+/* nav */
+
+.topnav{
+    display: flex;
+    text-align: right;
+    width: auto;
+}
+
+.topnav div{
+    margin-bottom: 5vh;
+    width: 100%;
+    margin-right: 8vw;
+}
+
+.topnav img{
+    width: 8vw;
+}
+
+#logo {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 5vw;
+}
+
+ul#horizontal-list{
+    list-style: none;
+    padding-top: 20px;
+}
+
+ul#horizontal-list li, ul#horizontal-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.4vw;
+    color: white;
+}
+
+a li {
+    color: white;
+    border-radius: 5px;
+    margin-right: 0.2vw;
+    font-size: 17px;
+}
+
+#sign-button {
+    color: white;
+    font-weight: 500;
+    background-color: #F0131E;
+    opacity: 1;
+    border-radius: 5px;
+    margin-right: 0.2vw;
+
+}
+
+/* end nav */
+
+
+/* page headers */
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+/* end page headers */
+
+
+/* main content of pages */
+
+#main-content {
+    width: fit-content;
+    height: fit-content;
+    padding: 25px;
+    background-color: rgb(0, 0, 0);
+    opacity: .75;
+    color: white;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+div h5 {
+    margin: 30px;
+}
+
+/* end main content of pages */
+
+
+/* home page */
+
+#home_main {
+    text-align: center;
+}
+
+#home-buttons-div {
+    padding: 40px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.btn-primary {
+    font-size: 20px;
+    background-color:#F0131E;
+    border-color: #F0131E;
+    margin: 25px;
+    margin-top: 50px;
+}
+
+/* end home page */
+
+
+/* api doc page */
+
+#doc {
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+    padding: 2vw;
+    overflow:auto;
+    background-color: rgb(0, 0, 0);
+    opacity: .75;
+}
+
+#snippet {
+    width:70%;
+}
+
+#request {
+    font-weight: 800;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+/* end api doc page */
+
+
+/* profile page */
+
+#welcome{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#profile_details{
+    width: fit-content;
+    margin: auto;
+}
+
+#profile_details h4{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#details{
+    width: 35vw;
+    overflow-wrap: break-word;
+    color:black;
+    opacity: .8;
+}
+
+/* end profile page */
+
+
+/* signup/signin pages */
+
+h2 {
+    margin: 40px;
+}
+
+main{
+    text-align: center;
+    width: 25%;
+    margin: auto;
+}
+
+fieldset {
+    margin: 10px;
+    width: 100%;
+}
+
+.btn-block {
+    margin: 10px;
+    font-size: 17px;
+}
+
+.btn-dark {
+    margin: 5px;
+}
+
+#google {
+    background-color: #3786ff;
+    color: white;
+}
+
+/* end signup page */
+
+
+/* Begin alert message */
+
+.alert{
+    display: flex;
+    width: fit-content;
+}
+
+#alert_btn{
+    padding:0;
+    margin-top:0;
+    margin-left:10px;
+}
+
+/* End alert message */

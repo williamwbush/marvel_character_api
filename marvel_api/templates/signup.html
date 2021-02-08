@@ -1,0 +1,43 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'email-in-use'%}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                        <a class="btn" id="alert_btn" href = "/signup">&times;</a>
+                    </div>
+                {% elif cat == 'invalid-email' %}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                        <a class="btn" id="alert_btn" href = "/signup">&times;</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<h2>Create Your Free Account</h2>
+
+<main>
+    <aside>
+        {% include 'shared/forms.html' %}
+    </aside>
+
+    <div class="google-choose">
+        <h6> OR </h6>
+    </div>
+
+    <a href="{{ url_for('google_auth') }}">
+        <button class="btn" id="google">
+            Sign Up With Google
+        </button>
+    </a>		
+</main>
+
+{% endblock content %}
