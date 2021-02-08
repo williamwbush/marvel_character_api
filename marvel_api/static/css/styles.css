@@ -218,6 +218,7 @@ fieldset {
 .alert{
     display: flex;
     width: fit-content;
+    margin: auto;
 }
 
 #alert_btn{
