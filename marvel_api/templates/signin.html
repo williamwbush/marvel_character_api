@@ -8,15 +8,15 @@
         {% if messages %}
             {% for cat,msg in messages %}
                 {% if cat == 'auth-failed'%}
-                    <div class="alert alert-danger">
+                    <main class="alert alert-danger">
                         {{ msg }}
                         <a class="btn" id="alert_btn" href = "/signin">&times;</a>
-                    </div>
+                    </main>
                 {% elif cat == 'invalid-email' %}
-                    <div class="alert alert-danger">
+                    <main class="alert alert-danger">
                         {{ msg }}
                         <a class="btn" id="alert_btn" href = "/signin">&times;</a>
-                    </div>
+                    </main>
                 {% endif %}
             {% endfor %}
         {% endif %}
