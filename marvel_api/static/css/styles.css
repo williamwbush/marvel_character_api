@@ -219,6 +219,7 @@ fieldset {
     /* display: flex; */
     width: fit-content;
     margin: auto;
+    text-align: center;
 }
 
 #alert_btn{
