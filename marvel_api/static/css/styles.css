@@ -216,7 +216,7 @@ fieldset {
 /* Begin alert message */
 
 .alert{
-    display: flex;
+    /* display: flex; */
     width: fit-content;
     margin: auto;
 }
